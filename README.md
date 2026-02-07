@@ -1,6 +1,6 @@
-# yt-transcript
+# YT Transcript
 
-`yt-transcript` is a Python CLI program that takes a YouTube video URL and outputs the transcript to a file.
+`YT Transcript` is a Python CLI program that takes a YouTube video URL and outputs the transcript to a file.
 
 Behavior:
 - It tries manually created YouTube captions first.
@@ -43,3 +43,7 @@ uv run yt-transcript <youtube_url> [OPTIONS]
 ```
 
 Run `uv run yt-transcript --help` for all options.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
