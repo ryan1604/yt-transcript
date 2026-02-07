@@ -30,7 +30,7 @@ Behavior:
 Download `ffmpeg` and put it in the root directory.
 
 ```powershell
-git clone <repo_url>
+git clone https://github.com/ryan1604/yt-transcript
 cd yt_transcript
 uv sync
 uv run yt-transcript <youtube_url> [OPTIONS]
