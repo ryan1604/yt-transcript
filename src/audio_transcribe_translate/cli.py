@@ -284,10 +284,10 @@ def _validate_runtime_options(
 ) -> None:
     if force_stt and (resolved_input.input_type != "youtube" or task != "transcribe"):
         raise InvalidInputError("--force-stt is only supported for YouTube transcription runs")
-    # if task == "translate" and model == "large-v3-turbo":
-    #     raise InvalidInputError(
-    #         "Model 'large-v3-turbo' is not supported for translation. Use 'large-v3' or 'distil-large-v3'."
-    #     )
+    if task == "translate" and model == "large-v3-turbo":
+        raise InvalidInputError(
+            "Model 'large-v3-turbo' is not supported for translation. Use 'large-v3' or 'distil-large-v3'."
+        )
 
 
 def _resolve_caption_language(language: str | None) -> str:

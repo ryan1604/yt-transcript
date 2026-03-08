@@ -44,8 +44,8 @@ YouTube inputs use the canonical video ID as the output stem. Local files use a 
 Install dependencies and make sure `ffmpeg` is available on `PATH` or present in the repository root.
 
 ```powershell
-git clone <repo_url>
-cd <repo_dir>
+git clone https://github.com/ryan1604/audio-transcribe-translate
+cd audio-transcribe-translate
 uv sync
 uv run att --help
 ```
@@ -101,14 +101,12 @@ JSON output includes:
 - `source_language`
 - `segments`
 
-## Developer Notes
-
-- CLI entrypoint: `att`
-- Python package path: `audio_transcribe_translate`
-- Module entrypoint: `python -m audio_transcribe_translate`
-
 Run tests with:
 
 ```powershell
-uv run --extra dev pytest
+uv run pytest
 ```
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
