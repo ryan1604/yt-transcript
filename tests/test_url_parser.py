@@ -1,7 +1,7 @@
 import pytest
 
-from yt_transcript.errors import InvalidInputError
-from yt_transcript.url_parser import extract_video_id, normalize_video_url
+from audio_transcribe_translate.errors import InvalidInputError
+from audio_transcribe_translate.url_parser import extract_video_id, normalize_video_url
 
 
 @pytest.mark.parametrize(

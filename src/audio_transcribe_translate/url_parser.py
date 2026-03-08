@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from urllib.parse import parse_qs, urlparse
 
-from yt_transcript.errors import InvalidInputError
+from audio_transcribe_translate.errors import InvalidInputError
 
 
 YOUTUBE_HOSTS = {

@@ -1,4 +1,4 @@
-"""yt_transcript package."""
+"""audio_transcribe_translate package."""
 
 __all__ = ["__version__"]
 

@@ -7,12 +7,12 @@ from pathlib import Path
 
 from yt_dlp import YoutubeDL
 
-from yt_transcript.errors import RetrievalError, TranscriptionError
+from audio_transcribe_translate.errors import RetrievalError, TranscriptionError
 
 
-def download_audio(video_url: str, video_id: str, temp_dir: Path) -> Path:
+def download_audio(video_url: str, input_id: str, temp_dir: Path) -> Path:
     temp_dir.mkdir(parents=True, exist_ok=True)
-    output_template = str(temp_dir / f"{video_id}.%(ext)s")
+    output_template = str(temp_dir / f"{input_id}.%(ext)s")
 
     ydl_opts = {
         "format": "bestaudio/best",
@@ -35,8 +35,8 @@ def download_audio(video_url: str, video_id: str, temp_dir: Path) -> Path:
     return path
 
 
-def preprocess_audio_to_wav(input_path: Path, temp_dir: Path, video_id: str) -> Path:
-    output_path = temp_dir / f"{video_id}.wav"
+def preprocess_audio_to_wav(input_path: Path, temp_dir: Path, input_id: str) -> Path:
+    output_path = temp_dir / f"{input_id}.wav"
     command = [
         "ffmpeg",
         "-y",

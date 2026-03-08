@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from yt_transcript.errors import RetrievalError
-from yt_transcript.models import TranscriptSegment
+from audio_transcribe_translate.errors import RetrievalError
+from audio_transcribe_translate.models import TranscriptSegment
 
 try:
     from youtube_transcript_api import YouTubeTranscriptApi

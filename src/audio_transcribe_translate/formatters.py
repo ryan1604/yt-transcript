@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 
-from yt_transcript.models import TranscriptResult
+from audio_transcribe_translate.models import TranscriptResult
 
 
 def format_output(result: TranscriptResult, fmt: str, timestamps: bool) -> str:
@@ -38,9 +38,13 @@ def to_srt(result: TranscriptResult) -> str:
 
 def to_json(result: TranscriptResult, timestamps: bool) -> str:
     payload: dict[str, object] = {
-        "video_id": result.video_id,
+        "input_id": result.input_id,
+        "input_type": result.input_type,
+        "input_reference": result.input_reference,
         "source": result.source,
+        "task": result.task,
         "language": result.language,
+        "source_language": result.source_language,
         "segments": [],
     }
     segments = []

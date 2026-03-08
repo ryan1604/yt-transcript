@@ -1,10 +1,12 @@
-from yt_transcript.formatters import format_output
-from yt_transcript.models import TranscriptResult, TranscriptSegment
+from audio_transcribe_translate.formatters import format_output
+from audio_transcribe_translate.models import TranscriptResult, TranscriptSegment
 
 
 def _sample_result() -> TranscriptResult:
     return TranscriptResult(
-        video_id="dQw4w9WgXcQ",
+        input_id="dQw4w9WgXcQ",
+        input_type="youtube",
+        input_reference="https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         source="captions",
         language="en",
         segments=[
@@ -32,6 +34,9 @@ def test_srt_format() -> None:
 
 def test_json_with_timestamps() -> None:
     output = format_output(_sample_result(), fmt="json", timestamps=True)
-    assert '"video_id": "dQw4w9WgXcQ"' in output
+    assert '"input_id": "dQw4w9WgXcQ"' in output
+    assert '"input_type": "youtube"' in output
+    assert '"input_reference": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"' in output
+    assert '"task": "transcribe"' in output
     assert '"start": 0.2' in output
     assert '"end": 2.1' in output
